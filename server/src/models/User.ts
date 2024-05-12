@@ -28,9 +28,7 @@ export type UserAttributes = {
   id: number;
   name: string;
   email: string;
-  role: UserRoles;
-  createdAt: string;
-  updatedAt: string;
+  password: string;
 };
 
 export type UserCreationAttributes = Optional<UserAttributes, 'id'>;
@@ -39,9 +37,7 @@ export class User extends Model<InferAttributes<User>, InferCreationAttributes<U
   declare id: CreationOptional<number>;
   declare name: string;
   declare email: string;
-  declare role: UserRoles;
-  declare createdAt: string;
-  declare updatedAt: string;
+  declare password: string;
 
   declare getProfile: HasOneGetAssociationMixin<Profile>;
   declare createProfile: HasOneCreateAssociationMixin<Profile>;
@@ -62,14 +58,12 @@ User.init(
     },
     email: {
       type: new DataTypes.STRING(128),
-      allowNull: true,
+      allowNull: false,
     },
-    role: {
+    password: {
       type: new DataTypes.STRING(128),
-      allowNull: true,
+      allowNull: false,
     },
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE,
   },
   {
     tableName: 'users',

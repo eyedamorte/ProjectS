@@ -18,7 +18,7 @@ import EnvVars from '@src/constants/EnvVars';
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 import { NodeEnvs } from '@src/constants/misc';
-import { RouteError } from '@src/other/classes';
+import { RouteError } from '@src/other';
 import cors from 'cors';
 
 // **** Variables **** //

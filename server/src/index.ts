@@ -6,6 +6,8 @@ import server from './server';
 
 import { sequelize } from '@src/services';
 
+import { User } from './models';
+
 // **** Run **** //
 
 const SERVER_START_MSG = 'Express server started on port: ' + EnvVars.Port.toString();
@@ -13,7 +15,6 @@ const SERVER_START_MSG = 'Express server started on port: ' + EnvVars.Port.toStr
 const start = async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
 
     server.listen(EnvVars.Port, () => logger.info(SERVER_START_MSG));
   } catch {}
