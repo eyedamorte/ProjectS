@@ -20,10 +20,20 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other';
 import cors from 'cors';
+import expressOasGenerator, {
+  HandleResponsesOptions,
+  SPEC_OUTPUT_FILE_BEHAVIOR,
+} from 'express-oas-generator';
 
 // **** Variables **** //
 
 const app = express();
+
+expressOasGenerator.handleResponses(app, {
+  specOutputPath: './test_spec.json',
+  alwaysServeDocs: true,
+  specOutputFileBehavior: SPEC_OUTPUT_FILE_BEHAVIOR.PRESERVE,
+} as HandleResponsesOptions);
 
 // **** Setup **** //
 
@@ -66,6 +76,8 @@ app.use(
     return res.status(status).json({ error: err.message });
   },
 );
+
+expressOasGenerator.handleRequests();
 
 // **** Export default **** //
 

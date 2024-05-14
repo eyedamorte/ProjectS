@@ -11,8 +11,8 @@
   "scripts": {
     "bootstrap": "yarn install",
     "// start scripts": "",
-    "start:client": "turbo run start --filter=@lookingforaband/client",
-    "start:server": "turbo run start --filter=@lookingforaband/server",
+    "start:client": "dotenv -- turbo run start --filter=@lookingforaband/client",
+    "start:server": "dotenv -- turbo run start --filter=@lookingforaband/server",
     "// build scripts": "",
     "build": "turbo run build",
     "build:client": "turbo run build --filter=@lookingforaband/client",
@@ -36,6 +36,7 @@
     "@typescript-eslint/parser": "7.7.0",
     "bcrypt": "^5.1.1",
     "ci-info": "4.0.0",
+    "dotenv": "^16.4.5",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
@@ -57,6 +58,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/pg": "^8"
+    "@types/pg": "^8",
+    "dotenv-cli": "latest"
   }
 }

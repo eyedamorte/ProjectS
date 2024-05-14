@@ -4,6 +4,7 @@ import { User } from '@src/models/User';
 import { RouteError } from '@src/other';
 import { sign } from 'jsonwebtoken';
 import EnvVars from '@src/constants/EnvVars';
+import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 const generateJwtToken = (id: number, email: string) => {
   return sign({ id, email }, EnvVars.Jwt.Secret, { expiresIn: '24h' });
@@ -11,7 +12,7 @@ const generateJwtToken = (id: number, email: string) => {
 
 export const authController = () => {
   const registration = async (req: Request, res: Response, next: NextFunction) => {
-    const { email, password, name } = req.body;
+    const { email, password, name } = req.params;
 
     const candidate = await User.findOne({ where: { email } });
 
@@ -22,7 +23,9 @@ export const authController = () => {
     const hashPassword = await bcrypt.hash(password, 5);
     const user = await User.create({ email, password: hashPassword, name: name });
     const token = generateJwtToken(user.id, email);
-    return res.json({ token });
+
+    res.status(HttpStatusCodes.OK).json({ token });
+    next();
   };
 
   const login = async (req: Request, res: Response, next: NextFunction) => {

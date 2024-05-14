@@ -4,6 +4,8 @@
 
 /* eslint-disable node/no-process-env */
 
+console.log(process.env.PORT);
+
 export default {
   NodeEnv: process.env.NODE_ENV ?? '',
   Port: process.env.PORT ?? 0,
