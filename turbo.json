@@ -27,6 +27,10 @@
       "typecheck": {
         "dependsOn": ["^build"],
         "cache": false
+      },
+      "codegen": {
+        "dependsOn": ["^build"],
+        "cache": false
       }
     },
     "globalDependencies": [

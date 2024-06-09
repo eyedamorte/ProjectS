@@ -25,7 +25,8 @@
     "lint": "turbo run lint",
     "lint:server": "turbo run lint --filter=@lookingforaband/server",
     "lint:client": "turbo run lint --filter=@lookingforaband/client",
-    "prisma": "dotenv -- prisma"
+    "prisma": "dotenv -- prisma",
+    "codegen": "turbo run codegen --filter=@lookingforaband/client"
   },
   "prisma": {
     "schema": "server/prisma/schema.prisma"
