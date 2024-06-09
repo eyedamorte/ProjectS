@@ -24,7 +24,11 @@
     "// lint scripts": "",
     "lint": "turbo run lint",
     "lint:server": "turbo run lint --filter=@lookingforaband/server",
-    "lint:client": "turbo run lint --filter=@lookingforaband/client"
+    "lint:client": "turbo run lint --filter=@lookingforaband/client",
+    "prisma": "dotenv -- prisma"
+  },
+  "prisma": {
+    "schema": "server/prisma/schema.prisma"
   },
   "author": "eyedamorte",
   "license": "ISC",
@@ -50,6 +54,7 @@
     "eslint-plugin-vitest": "0.5.3",
     "jsonwebtoken": "^9.0.2",
     "lint-staged": "15.2.2",
+    "npx": "^10.2.2",
     "pg": "^8.11.5",
     "prettier": "3.2.5",
     "turbo": "1.11.3",

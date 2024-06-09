@@ -1,5 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Api, ContentType } from '../../../Api';
+import { Api } from '../../../Api';
+
 
 const { api } = new Api();
 
@@ -14,7 +15,7 @@ const initialState: AuthState = {
 };
 
 export const registrationAsyncThunk = createAsyncThunk(`${sliceName}/signin`, params =>
-  api.userRegistrationCreate({ email: 'fe' }),
+  api.userRegistrationList({'email'})
 );
 
 const authSlice = createSlice({

@@ -7,7 +7,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx",
-    "api-codegen": "swagger-typescript-api --path  http://localhost:8000/api-spec/v2"
+    "api-codegen": "swagger-typescript-api -p http://127.0.0.1:8000/docs/json -o ./src/http/generated --modular --axios"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.4",

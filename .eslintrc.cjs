@@ -63,7 +63,9 @@ module.exports = {
     'no-promise-executor-return': 'warn',
     'no-continue': 'off',
     'no-await-in-loop': 'off',
-
+    'no-useless-constructor': 'off',
+    'no-empty-function': 'off',
+    'max-classes-per-file': 'off',
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-use-before-define': 'off',
