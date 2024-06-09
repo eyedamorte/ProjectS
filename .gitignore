@@ -25,6 +25,8 @@ dist-ssr
 
 .turbo
 
+.yarn
+
 # compiled output
 /dist
 /node_modules
