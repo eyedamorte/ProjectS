@@ -1,41 +1,25 @@
 {
   "name": "@lookingforaband/client",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "main": "src/index.tsx",
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx",
-    "api-codegen": "swagger-typescript-api -p http://127.0.0.1:8000/docs/json -o ./src/http/generated --modular --axios"
+    "start": "next dev",
+    "build": "next build",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.4",
-    "axios": "^1.6.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.2",
-    "react-router": "^6.23.1",
-    "react-router-dom": "^6.23.1",
-    "redux": "^5.0.1",
-    "redux-thunk": "^3.1.0",
-    "swagger-typescript-api": "^13.0.3"
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "@vitejs/plugin-react-swc": "3.6.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "jsdom": "24.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-checker": "0.6.4",
-    "vite-plugin-svgr": "4.2.0",
-    "vitest": "1.5.0"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
